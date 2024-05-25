@@ -1,17 +1,16 @@
 import 'package:e_learning/core/constant/routes.dart';
 import 'package:e_learning/core/functions/handling_data_controller.dart';
 import 'package:e_learning/core/functions/show_message.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 import '../../core/class/status_request.dart';
-import '../../core/functions/global_controller.dart';
 import '../../core/services/services.dart';
 import '../../data/datasource/remote/auth/auth.dart';
 
 class LoginController extends GetxController {
-  final size = Get.find<GlobalController>();
   late TextEditingController emailAddress, password, npassword, cpassword;
   AuthData authRequest = AuthData(Get.find());
   MyServices myServices = Get.find();
@@ -27,8 +26,13 @@ class LoginController extends GetxController {
   void googleSignin() async {
     await GoogleSignIn().signOut();
     final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+    GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+    AuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth?.accessToken, idToken: googleAuth?.idToken);
 
     if (googleUser != null) {
+      UserCredential user =
+          await FirebaseAuth.instance.signInWithCredential(credential);
       final userEmail = googleUser.email;
       final fullName = googleUser.displayName;
       final profile = googleUser.photoUrl;

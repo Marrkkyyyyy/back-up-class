@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "998993142564",
+    "project_id": "back-up-class",
+    "storage_bucket": "back-up-class.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:998993142564:android:bb877d335cfc02338c09b1",
+        "android_client_info": {
+          "package_name": "com.newbie.learning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "998993142564-h6qk8vt7fkkqggmsik9ro8f6pdktacr9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.newbie.learning",
+            "certificate_hash": "c4c4b8b4da426d02e61ac89ca776890636ce6555"
+          }
+        },
+        {
+          "client_id": "998993142564-nd17q5otib1knps5snpcjevilo497otk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDI3jWTSr9V6cLl0ZZzDtDlYi9ROCOVV_0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "998993142564-nd17q5otib1knps5snpcjevilo497otk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
